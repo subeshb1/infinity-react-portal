@@ -1,0 +1,43 @@
+.iui-fixed {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  justify-content: flex-start;
+  pointer-events: none;
+  top: 0;
+}
+.iui-fixed--bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.iui-fixed--center {
+  justify-content: center;
+}
+.iui-fixed--right {
+  justify-content: flex-end;
+}
+
+.iui-fixed__container::-webkit-scrollbar {
+  display: none;
+}
+
+.iui-fixed__container {
+  pointer-events: all;
+  padding: 4px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.iui-fixed__toast {
+  pointer-events: all;
+  max-width: 300px;
+  margin: 10px 0px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 0 6px grey;
+  border-radius: 10px;
+}
