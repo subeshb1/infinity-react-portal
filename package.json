@@ -8,7 +8,7 @@
     "commit": "npx git-cz",
     "build": "babel src -d ./ --copy-files",
     "storybook": "start-storybook  -p 6006  -c .storybook",
-    "build-storybook": "build-storybook -s stories"
+    "build-storybook": "build-storybook -c .storybook -o public"
   },
   "repository": {
     "type": "git",
