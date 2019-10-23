@@ -1,29 +1,39 @@
-# react-library-boilerplate
-
-Simple Boiler Plate library for Creating React Component Librarires
+# Infinity React Portal
 
 ## Usage
 
-### Clone
+```
+yarn add infinity-react-portal
+```
 
-    git clone https://github.com/subeshb1/infinity-react-portal.git
+Contributing
 
-### Change Details
+## Setup
 
-Edit the author, Repo etc from package.json
+Requirements: [nodejs](https://nodejs.org/en/)
 
-### Add Semantic Release
+### Install yarn
 
-Install
+```
+npm i -g yarn
+```
 
-    npm i -g semantic-cli
+### Clone the repo
 
-Setup
+```
+git clone https://github.com/subeshb1/infinity-react-portal.git
+```
 
-    npx semantic setup
+### Install dependencies
 
-And follow along the steps
+```
+yarn
+```
 
-### Build
+### Start StoryBook
 
-    npm run build
+```
+yarn storybook
+```
+
+Then make your changes and make a pull request.
