@@ -1,0 +1,84 @@
+.iui-notification {
+  display: flex;
+  flex-shrink: 0;
+  max-width: 400px;
+  box-shadow: 0 0 2px grey;
+  padding: 10px;
+  border-radius: 8px;
+  background: white;
+  border-left: 5px solid transparent;
+  margin: 10px 5px;
+}
+
+.iui-notification__cross:hover > svg {
+  fill: rgb(87, 87, 87);
+}
+.iui-notification__cross,
+.iui-notification__icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.iui-notification__cross {
+  margin: 0 0 0 auto;
+}
+
+.iui-notification__actions {
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.iui-notification__title {
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+  flex-grow: 1;
+}
+/* Info */
+.iui-notification--info {
+  border-left-color: rgb(26, 134, 177);
+}
+.iui-notification--info .iui-notification__title {
+  color: rgb(26, 134, 177);
+}
+.iui-notification--info .iui-notification__icon svg {
+  fill: rgb(26, 134, 177);
+}
+/* Error */
+.iui-notification--error {
+  border-left-color: rgb(177, 26, 26);
+}
+.iui-notification--error .iui-notification__title {
+  color: rgb(177, 26, 26);
+}
+
+.iui-notification--error .iui-notification__icon svg {
+  fill: rgb(177, 26, 26);
+}
+/* Success */
+.iui-notification--success {
+  border-left-color: rgb(61, 177, 26);
+}
+.iui-notification--success .iui-notification__title {
+  color: rgb(61, 177, 26);
+}
+
+.iui-notification--success .iui-notification__icon svg {
+  fill: rgb(61, 177, 26);
+}
+/* Warning */
+
+.iui-notification--warning {
+  border-left-color: rgb(199, 177, 51);
+}
+
+.iui-notification--warning .iui-notification__title {
+  color: rgb(199, 177, 51);
+}
+.iui-notification--warning .iui-notification__icon svg {
+  fill: rgb(199, 177, 51);
+}

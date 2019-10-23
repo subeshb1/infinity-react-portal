@@ -19,7 +19,16 @@ setAddon(JSXAddon);
 
 addDecorator(withKnobs);
 const Button = withNotifications(({ push, notifications }) => (
-  <button onClick={() => push({ type: "sue", content: notifications.length })}>
+  <button
+    onClick={() =>
+      push({
+        type: "success",
+        title: "Success " + notifications.length,
+        message: <button>Subesh</button>,
+        icon: true
+      })
+    }
+  >
     Hello
   </button>
 ));

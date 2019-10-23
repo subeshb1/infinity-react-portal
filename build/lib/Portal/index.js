@@ -14,27 +14,37 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var react_dom_1 = require("react-dom");
+var ReactDOM = require("react-dom");
 require("../portal.css");
-var div = document.createElement("div");
-div.id = "portal";
-document.body.prepend(div);
-var Portal = /** @class */ (function (_super) {
-    __extends(Portal, _super);
-    function Portal() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var portalCounter = 0;
+exports.createPortal = function (first) {
+    var root;
+    if (typeof first === "string" && document.getElementById(first) !== null) {
+        root = document.getElementById(first);
     }
-    /**
-     * componentDidMount
-     */
-    Portal.prototype.componentDidMount = function () { };
-    Portal.prototype.render = function () {
-        return react_dom_1.default.createPortal(React.createElement("div", { className: "iui-fixed iui-fixed--bottom iui-fixed--right " },
-            React.createElement("div", { className: "iui-fixed__container" },
-                React.createElement("div", { className: "iui-fixed__toast" }, "Hello 1 Hello 1Hello 1Hello 1Hello 1Hello 1Hello 1Hello 1Hello 1Hello 1Hello 1"),
-                React.createElement("div", { className: "iui-fixed__toast" }, "Hello 1"))), document.getElementById("portal"));
-    };
-    return Portal;
-}(React.Component));
-exports.default = Portal;
+    else if (first instanceof Element) {
+        root = first;
+    }
+    else {
+        var div = document.createElement("div");
+        div.id = first || "iui-portal-" + portalCounter++;
+        document.body.appendChild(div);
+        root = div;
+    }
+    return /** @class */ (function (_super) {
+        __extends(Portal, _super);
+        function Portal(props) {
+            return _super.call(this, props) || this;
+        }
+        /**
+         * componentDidMount
+         */
+        Portal.prototype.componentDidMount = function () { };
+        Portal.prototype.componentWillUnmount = function () { };
+        Portal.prototype.render = function () {
+            return ReactDOM.createPortal(this.props.children || "", root);
+        };
+        return Portal;
+    }(React.Component));
+};
 //# sourceMappingURL=index.js.map
